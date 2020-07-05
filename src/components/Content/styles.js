@@ -1,26 +1,35 @@
 import styled from 'styled-components'
 
 export const Container = styled.div`
-    grid-area: SJ;
-    background-color: red;
+    grid-area: CT;
+    background-color: #fafafa;
     overflow-y: scroll;
     ::-webkit-scrollbar {
         display: none;
     }
-    max-width: 100%;
     overflow-x: hidden;
-    border-right: 1px solid #dedede;
+    min-width: 100%;
+    min-height: 100%;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
 `
 export const Subject = styled.div`
-    width: 100vw;
-    height: 80px;
+    width: 350px;
+    height: 350px;
     background-color: #fafafa;
-    display: flex;
-    align-items: center;
     border-bottom: 1px solid #dedede;
+    border-right: 1px solid #dedede;
+    border-top: 1px solid #dedede;
     transition: 400ms;
     color: #000;
     cursor: pointer;
+    min-width: 100px;
+    margin-right: 15px;
+    margin-top: 5px;
+    margin-bottom: 5px;
+    margin-left: 30px;
+    border-radius: 8px;
 `
 
 export const Circle = styled.div`

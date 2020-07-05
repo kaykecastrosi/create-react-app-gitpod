@@ -13,7 +13,9 @@ export default function Header() {
                 <Title>SCHOOLWORK</Title>
                 </div>
                 <div style={{ display: "flex", alignItems: "center" }}>
-                    <Button>oi</Button>
+                    <Button>
+                        <h3 style={{ fontWeight: 400, fontFamily: 'Roboto'}}>Painel do Admin</h3>
+                    </Button>
                 </div>
                 
             </Container>

@@ -16,16 +16,25 @@ export const Container = styled.div`
 
 export const Title = styled.h1`
     margin-left: 16px;
+    font-family: 'Roboto';
 `
 
 export const Button = styled.div`
-    width: 100px;
+    width: 150px;
     height: 50px;
     border-style: solid;
     border-radius: 8px;
     background-color: #fff;
-    margin-left: 8px;
+    margin-right: 8px;
     display: flex;
     align-items: center;
     justify-content: center;
+    border-width: 3px;
+    cursor: pointer;
+    transition: 400ms;
+
+    &:hover {
+        color: #fff;
+        background-color: #5fa8d3;
+    }
 `
