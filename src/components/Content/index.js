@@ -35,10 +35,10 @@ export default function Content() {
     
     return (
         <Container>
-                {isLoading ? loading() : selected === "all" ? tasks.map(task => (
-                    <Subject key={task._id} style={{  borderLeft: `5px solid ${ subjects.filter(subject => subject.code === task.subject)[0].color}`, }}>
+                {isLoading ? loading() : selected == "all" ? tasks.map(task => (
+                    <Subject key={task._id} style={{  borderLeft: `5px solid ${ subjects.filter(subject => subject.code == task.subject)[0].color}`, }}>
                        <Header>
-                        <Circle style={{backgroundColor: `${subjects.filter(subject => subject.code === task.subject)[0].color}`}}>
+                        <Circle style={{backgroundColor: `${subjects.filter(subject => subject.code == task.subject)[0].color}`}}>
                         <Icon src={require(`../../../assets/icons/${task.subject}.png`)} />
                         </Circle>
                         <Title>{task.title}</Title>
@@ -50,14 +50,14 @@ export default function Content() {
                            <FinalData>Data final: {task.finalData}</FinalData>
                        </Data>
                        <Platform>
-                           <img style={{ width: "70px", height: "35px" } } alt="Plataforma" src={require(`../../../assets/platforms/${task.platform}.png`)} />
+                           <img style={{ width: "70px", height: "35px" } } src={require(`../../../assets/platforms/${task.platform}.png`)} />
                        </Platform>
                            
                     </Subject>
-                )) : tasks.filter(task => task.subject = selected).map(task => (
-                    <Subject key={task._id} style={{  borderLeft: `5px solid ${ subjects.filter(subject => subject.code === task.subject)[0].color}`, }}>
+                )) : tasks.filter(task => task.subject == selected).map(task => (
+                    <Subject key={task._id} style={{  borderLeft: `5px solid ${ subjects.filter(subject => subject.code == task.subject)[0].color}`, }}>
                        <Header>
-                        <Circle style={{backgroundColor: `${subjects.filter(subject => subject.code === task.subject)[0].color}`}}>
+                        <Circle style={{backgroundColor: `${subjects.filter(subject => subject.code == task.subject)[0].color}`}}>
                         <Icon src={require(`../../../assets/icons/${task.subject}.png`)} />
                         </Circle>
                         <Title>{task.title}</Title>
@@ -66,10 +66,10 @@ export default function Content() {
                            <Description>{task.description}</Description>
                        </Body>
                        <Data>
-                           <Title>Data final: {task.finalData}</Title>
+                           <FinalData>Data final: {task.finalData}</FinalData>
                        </Data>
                        <Platform>
-                           <img style={{ width: "70px", height: "35px" } } alt="Plataforma" src={require(`../../../assets/platforms/${task.platform}.png`)} />
+                           <img style={{ width: "70px", height: "35px" } } src={require(`../../../assets/platforms/${task.platform}.png`)} />
                        </Platform>
                            
                     </Subject>
