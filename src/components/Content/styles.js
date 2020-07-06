@@ -38,6 +38,10 @@ export const Subject = styled.div`
     margin-bottom: 5px;
     margin-left: 30px;
     border-radius: 8px;
+    @media(max-width: 800px){
+        width: 280px;
+        height: 280px;   
+    }
 `
 
 export const Circle = styled.div`
@@ -87,6 +91,9 @@ export const Data = styled.div`
 `
 
 export const Platform = styled.div`
+    display: flex;
+    align-items: center;
+    justify-content: center;
     grid-area: PF;
     border-radius: 8px;
     background-color: #ff8700;
@@ -95,4 +102,13 @@ export const Platform = styled.div`
     flex-shrink: none;
     align-items: center;
     justify-content: center;
+`
+
+export const FinalData = styled.h2`
+    margin-left: 8px;
+    font-family: 'Roboto';
+    font-weight: 400;
+    @media(max-width: 800px){
+        font-size: 20px; 
+    }
 `

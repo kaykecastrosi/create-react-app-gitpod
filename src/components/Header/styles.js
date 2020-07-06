@@ -11,12 +11,16 @@ export const Container = styled.div`
     overflow: hidden;
     align-items: center;
     color: #5fa8d3;
-}
+
 `
 
 export const Title = styled.h1`
     margin-left: 16px;
     font-family: 'Roboto';
+    @media(max-width: 800px){
+        font-size: 20px;
+        margin-left: 10px;
+    }
 `
 
 export const Button = styled.div`
@@ -32,9 +36,22 @@ export const Button = styled.div`
     border-width: 3px;
     cursor: pointer;
     transition: 400ms;
+    @media(max-width: 800px){
+        width: 90px;
+        height: 30px;
+        margin-right: 16px;
+    }
 
     &:hover {
         color: #fff;
         background-color: #5fa8d3;
+    }
+`
+
+export const ButtonText= styled.h3`
+    font-weight: 400; 
+    font-family: 'Roboto';
+    @media(max-width: 800px){
+        font-size: 12px;
     }
 `

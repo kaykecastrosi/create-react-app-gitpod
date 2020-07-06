@@ -32,6 +32,9 @@ export const Circle = styled.div`
     justify-content: center;
     margin-left: 8px;
     display: flex;
+    @media(max-width: 800px){
+        margin-left: 14px;
+    }
 `
 
 export const Icon = styled.img`
@@ -43,4 +46,7 @@ export const Title = styled.h3`
     margin-left: 8px;
     font-family: 'Roboto';
     font-weight: 400;
+    @media(max-width: 800px){
+        font-size: 0.1px;
+    }
 `
