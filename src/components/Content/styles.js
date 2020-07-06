@@ -13,8 +13,16 @@ export const Container = styled.div`
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
+    transition: 400ms;
 `
 export const Subject = styled.div`
+    display: grid;
+    grid-template-columns: auto auto;
+    grid-template-rows: 60px auto 60px;
+    grid-template-areas: 
+        'HD HD'
+        'CT CT'
+        'FN PF';
     width: 350px;
     height: 350px;
     background-color: #fafafa;
@@ -41,6 +49,7 @@ export const Circle = styled.div`
     align-items: center;
     justify-content: center;
     margin-left: 8px;
+    flex-shrink: 0;
 `
 
 export const Icon = styled.img`
@@ -48,8 +57,42 @@ export const Icon = styled.img`
     height: 30px;
 `
 
-export const Title = styled.h3`
+export const Title = styled.h2`
     margin-left: 8px;
     font-family: 'Roboto';
     font-weight: 400;
+`
+
+export const Description = styled.p`
+    font-size: 20px;
+    font-family: 'Roboto';
+    word-wrap: break-word;
+`
+
+export const Header = styled.div`
+    grid-area: HD; 
+    display: flex; 
+    flex-direction: row; 
+    margin-top: 10px;
+    align-items: center;
+`
+
+export const Body = styled.div`
+    grid-area: CT;
+    margin-left: 10px;
+`
+
+export const Data = styled.div`
+    grid-area: FN;
+`
+
+export const Platform = styled.div`
+    grid-area: PF;
+    border-radius: 8px;
+    background-color: #ff8700;
+    margin-bottom: 6px;
+    margin-right: 6px;
+    flex-shrink: none;
+    align-items: center;
+    justify-content: center;
 `

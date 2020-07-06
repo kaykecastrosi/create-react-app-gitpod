@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react'
-import { Container, Subject, Icon, Circle, Title } from './styles'
+import { Data, Platform, Body, Container, Subject, Icon, Circle, Title, Description, Header } from './styles'
 import { useSelector } from 'react-redux'
 import api from '../../services/api'
 import { MdSchool } from "react-icons/md";
@@ -26,7 +26,7 @@ export default function Content() {
     }, useSelector(state => state.selected))
 
     const loading = () => (
-        <div style={{ display: "flex", minWidth: "100%", minHeight: "100%", alignItems: "center", justifyContent: "center", backgroundColor: "#00000020" }}>
+        <div style={{ transition: "400ms", display: "flex", minWidth: "100%", minHeight: "100%", alignItems: "center", justifyContent: "center", backgroundColor: "#00000020" }}>
             <IconContext.Provider  value={{ style: {fontSize: '50px',  marginLeft: "8px",} }} >
                     <MdSchool/>
                 </IconContext.Provider>
@@ -37,12 +37,43 @@ export default function Content() {
         <Container>
                 {isLoading ? loading() : selected == "all" ? tasks.map(task => (
                     <Subject key={task._id} style={{  borderLeft: `5px solid ${ subjects.filter(subject => subject.code == task.subject)[0].color}`, }}>
+                       <Header>
+                        <Circle style={{backgroundColor: `${subjects.filter(subject => subject.code == task.subject)[0].color}`}}>
+                        <Icon src={require(`../../../assets/icons/${task.subject}.png`)} />
+                        </Circle>
                         <Title>{task.title}</Title>
+                       </Header>
+                       <Body>
+                           <Description>{task.description}</Description>
+                       </Body>
+                       <Data>
+                           <Title>Data final: {task.finalData}</Title>
+                       </Data>
+                       <Platform>
+                           <img style={{ width: "70px", height: "35px" } } src={require(`../../../assets/platforms/${task.platform}.png`)} />
+                       </Platform>
+                           
                     </Subject>
                 )) : tasks.filter(task => task.subject == selected).map(task => (
                     <Subject key={task._id} style={{  borderLeft: `5px solid ${ subjects.filter(subject => subject.code == task.subject)[0].color}`, }}>
+                       <Header>
+                        <Circle style={{backgroundColor: `${subjects.filter(subject => subject.code == task.subject)[0].color}`}}>
+                        <Icon src={require(`../../../assets/icons/${task.subject}.png`)} />
+                        </Circle>
                         <Title>{task.title}</Title>
-                </Subject>))}
+                       </Header>
+                       <Body>
+                           <Description>{task.description}</Description>
+                       </Body>
+                       <Data>
+                           <Title>Data final: {task.finalData}</Title>
+                       </Data>
+                       <Platform>
+                           <img style={{ width: "70px", height: "35px" } } src={require(`../../../assets/platforms/${task.platform}.png`)} />
+                       </Platform>
+                           
+                    </Subject>
+                    ))}
         </Container>
 
     )

@@ -28,10 +28,10 @@ export const Circle = styled.div`
     width: 50px;
     height: 50px;
     border-radius: 25px;
-    display: flex;
     align-items: center;
     justify-content: center;
     margin-left: 8px;
+    display: flex;
 `
 
 export const Icon = styled.img`
